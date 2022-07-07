@@ -103,3 +103,9 @@ class KillamixMini(ControlSurface):
         )
         self._modes.selected_mode = "device"
         self._modes.set_enabled(True)
+
+        self._KillamixMini__on_modes_changed.subject = self._modes
+
+    @listens("selected_mode")
+    def __on_modes_changed(self, mode):
+        self.show_message(f"Killamix Mini: Entering {mode} mode")
