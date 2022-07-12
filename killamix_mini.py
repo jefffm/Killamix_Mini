@@ -27,6 +27,9 @@ class KillamixMini(ControlSurface):
     def __init__(self, c_instance):
         super().__init__(c_instance=c_instance, specification=Specification)
 
+    def log(self, string):
+        self._c_instance.log_message(string)
+
     def _create_control_surface(self):
         # create components
         self._create_device_parameters()
