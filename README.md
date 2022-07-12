@@ -19,7 +19,7 @@ Follow [Ableton's instructions](https://help.ableton.com/hc/en-us/articles/20907
 - **Encoders 1-8**: Automatically-mapped Device Parameters
 - **Buttons 1 + 2**: Select prev/next device
 - **Buttons 3 + 4**: Select prev/next device parameter bank
-- **Buttons 5 + 6**: Solo/mute current track
+- **Buttons 5 + 6**: Mute/solo current track
 - **Buttons 7 + 8**: Prev/next track
 - **Button 9**: Toggle mode
 - **X/Y**: unmapped
@@ -33,7 +33,7 @@ Today this mode is only partially-mapped:
 - **Buttons 1 + 2**: unmapped
 - **Buttons 3 + 4**: unmapped
 - **Buttons 5 + 6**: unmapped
-- **Buttons 7 + 8**: unmapped
+- **Buttons 7 + 8**: Prev/next track
 - **Button 9**: Toggle mode
 - **X/Y**: unmapped
 - **Encoder Buttons 1-9**: unmapped
