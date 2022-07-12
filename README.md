@@ -8,7 +8,7 @@ Follow [Ableton's instructions](https://help.ableton.com/hc/en-us/articles/20907
 
 ## Device Configuration
 
-- This control script expects the Killamix Mini to be configured with encoders in **absolute** mode. "Relative Signed Bit" works fine, but I found the encoder speed was very slow for some reason.
+- This control script expects the Killamix Mini to be configured with encoders in **absolute** mode. "Relative Signed Bit" technically works, and it [seems like](https://github.com/gluon/AbletonLive11_MIDIRemoteScripts/blob/b28d806ee359002b9d0f1cd58ea55a869e42371a/ableton/v3/control_surface/elements/encoder.py#L9) there's an [encoder sensitivity parameter](https://github.com/gluon/AbletonLive11_MIDIRemoteScripts/blob/b28d806ee359002b9d0f1cd58ea55a869e42371a/ableton/v2/control_surface/elements/encoder.py#L86) that should make this work. In my testing, the parameter didn't seem to do anything.
 - Buttons are in "toggle" mode (send 127 on push and 0 on release)
 - Encoder buttons are set to send CC rather than change channel. They aren't used yet.
 
@@ -21,9 +21,10 @@ Follow [Ableton's instructions](https://help.ableton.com/hc/en-us/articles/20907
 - **Buttons 3 + 4**: Select prev/next device parameter bank
 - **Buttons 5 + 6**: Mute/solo current track
 - **Buttons 7 + 8**: Prev/next track
-- **Button 9**: Toggle mode
+- **Button 9**: unmapped
 - **X/Y**: unmapped
-- **Encoder Buttons 1-9**: unmapped
+- **Encoder Buttons 1-8**: unmapped
+- **Encoder Button 9**: cycle mode
 
 ### Mixer Mode
 
@@ -34,6 +35,7 @@ Today this mode is only partially-mapped:
 - **Buttons 3 + 4**: unmapped
 - **Buttons 5 + 6**: unmapped
 - **Buttons 7 + 8**: Prev/next track
-- **Button 9**: Toggle mode
+- **Button 9**: unmapped
 - **X/Y**: unmapped
-- **Encoder Buttons 1-9**: unmapped
+- **Encoder Buttons 1-8**: unmapped
+- **Encoder Button 9**: cycle mode
