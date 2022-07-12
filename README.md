@@ -14,6 +14,7 @@ Follow [Ableton's instructions](https://help.ableton.com/hc/en-us/articles/20907
 
 ## Mapping
 
+
 ### Device Mode
 
 - **Encoders 1-8**: Automatically-mapped Device Parameters
@@ -39,3 +40,5 @@ Today this mode is only partially-mapped:
 - **X/Y**: unmapped
 - **Encoder Buttons 1-8**: unmapped
 - **Encoder Button 9**: cycle mode
+
+![Killamix-Obl-2](https://user-images.githubusercontent.com/4128043/178559553-e2f46b23-c7c6-4ed0-be80-a2f36c2bd0a7.png)
