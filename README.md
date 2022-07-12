@@ -10,7 +10,7 @@ Follow [Ableton's instructions](https://help.ableton.com/hc/en-us/articles/20907
 
 - This control script expects the Killamix Mini to be configured with encoders in **absolute** mode. "Relative Signed Bit" technically works, but the encoder sensitivity is at about 50% of what you'd expect. It [seems like](https://github.com/gluon/AbletonLive11_MIDIRemoteScripts/blob/b28d806ee359002b9d0f1cd58ea55a869e42371a/ableton/v3/control_surface/elements/encoder.py#L9) there's an [encoder sensitivity parameter](https://github.com/gluon/AbletonLive11_MIDIRemoteScripts/blob/b28d806ee359002b9d0f1cd58ea55a869e42371a/ableton/v2/control_surface/elements/encoder.py#L86) that should make this work. In my testing, the parameter didn't seem to do anything.
 - Buttons are in "toggle" mode (send 127 on push and 0 on release)
-- Encoder buttons are set to send CC rather than change channel. They aren't used yet.
+- Encoder buttons are set to send CC rather than change channel.
 
 ## Mapping
 
