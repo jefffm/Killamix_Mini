@@ -27,3 +27,13 @@ class Elements(ElementsBase):
 
         # Button 9
         self.add_modifier_button(18, "Button_9")
+
+        # Encoder Buttons 1-9
+        self.add_button_matrix(
+            [list(range(24, 33))],
+            "encoder_buttons",
+        )
+        self.add_submatrix(self.buttons, "Encoder_Buttons_1_thru_8", columns=(23, 31))
+
+        # Encoder Button 9
+        self.add_modifier_button(32, "Encoder_Button_9")

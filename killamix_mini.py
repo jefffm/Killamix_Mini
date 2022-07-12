@@ -12,7 +12,7 @@ from ableton.v3.control_surface.components import (
     ViewControlComponent,
     SimpleDeviceNavigationComponent,
 )
-from ableton.v3.control_surface.mode import AddLayerMode, ModesComponent
+from ableton.v3.control_surface.mode import ModesComponent
 from .elements import Elements
 
 
@@ -28,10 +28,13 @@ class KillamixMini(ControlSurface):
         super().__init__(c_instance=c_instance, specification=Specification)
 
     def _create_control_surface(self):
+        # create components
         self._create_device_parameters()
         self._create_view_control()
         self._create_device_navigation()
         self._create_mixer()
+
+        # create modes
         self._create_modes()
 
         self.set_can_update_controlled_track(True)
@@ -41,20 +44,14 @@ class KillamixMini(ControlSurface):
     def _create_device_parameters(self):
         self._device = DeviceComponent(
             is_enabled=False,
-            layer=Layer(
-                prev_bank_button="buttons_raw[3]",
-                next_bank_button="buttons_raw[4]",
-                parameter_controls="encoders_1_thru_8",
-            ),
+            layer=Layer(),
         )
         self._device.set_enabled(True)
 
     def _create_view_control(self):
         self._view_control = ViewControlComponent(
             is_enabled=False,
-            layer=Layer(
-                prev_track_button="buttons_raw[7]", next_track_button="buttons_raw[8]"
-            ),
+            layer=Layer(),
         )
 
         self._view_control.set_enabled(True)
@@ -62,20 +59,14 @@ class KillamixMini(ControlSurface):
     def _create_device_navigation(self):
         self._device_navigation = SimpleDeviceNavigationComponent(
             is_enabled=False,
-            layer=Layer(
-                prev_button="buttons_raw[1]",
-                next_button="buttons_raw[2]",
-            ),
+            layer=Layer(),
         )
         self._device_navigation.set_enabled(True)
 
     def _create_mixer(self):
         self._mixer = MixerComponent(
             is_enabled=False,
-            layer=Layer(
-                target_track_solo_button="buttons_raw[5]",
-                target_track_mute_button="buttons_raw[6]",
-            ),
+            layer=Layer(),
         )
         self._mixer.set_enabled(True)
 
@@ -83,22 +74,55 @@ class KillamixMini(ControlSurface):
         self._modes = ModesComponent(
             name="modes",
             is_enabled=False,
-            layer=Layer(cycle_mode_button="button_9"),
+            layer=Layer(cycle_mode_button="encoder_button_9"),
         )
         self._modes.add_mode(
             "device",
-            (),
+            (
+                (
+                    self._device_navigation,
+                    Layer(
+                        prev_button="buttons_raw[1]",
+                        next_button="buttons_raw[2]",
+                    ),
+                ),
+                (
+                    self._device,
+                    Layer(
+                        prev_bank_button="buttons_raw[3]",
+                        next_bank_button="buttons_raw[4]",
+                        parameter_controls="encoders_1_thru_8",
+                    ),
+                ),
+                (
+                    self._mixer,
+                    Layer(
+                        target_track_mute_button="buttons_raw[5]",
+                        target_track_solo_button="buttons_raw[6]",
+                        target_track_volume_control="encoder_9",
+                    ),
+                ),
+                (
+                    self._view_control,
+                    Layer(
+                        prev_track_button="buttons_raw[7]",
+                        next_track_button="buttons_raw[8]",
+                    ),
+                ),
+            ),
         )
         self._modes.add_mode(
             "mixer",
             (
-                AddLayerMode(
+                (
                     self._mixer,
                     Layer(
-                        volume_controls="encoders",
+                        volume_controls="encoders_1_thru_8",
                         master_track_volume_control="encoder_9",
+                        mute_buttons="encoder_buttons_1_thru_8",
+                        solo_buttons="buttons_1_thru_8",
                     ),
-                )
+                ),
             ),
         )
         self._modes.selected_mode = "device"
