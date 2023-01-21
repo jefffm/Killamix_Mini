@@ -30,7 +30,7 @@ class KillamixMini(ControlSurface):
     def log(self, string):
         self._c_instance.log_message(string)
 
-    def _create_control_surface(self):
+    def setup(self):
         # create components
         self._create_device_parameters()
         self._create_view_control()
