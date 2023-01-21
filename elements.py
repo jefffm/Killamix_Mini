@@ -1,6 +1,6 @@
 from __future__ import absolute_import, print_function, unicode_literals
 
-from ableton.v3.control_surface import ElementsBase, MapMode, PrioritizedResource
+from ableton.v3.control_surface import ElementsBase, MapMode
 
 
 class Elements(ElementsBase):
