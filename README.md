@@ -4,7 +4,9 @@ This is an Ableton Live MIDI controller script for use with the [Kenton Killamix
 
 ## Installation
 
-Follow [Ableton's instructions](https://help.ableton.com/hc/en-us/articles/209072009-Installing-third-party-remote-scripts) to install.
+~~Follow [Ableton's instructions](https://help.ableton.com/hc/en-us/articles/209072009-Installing-third-party-remote-scripts) to install~~
+
+The "third party remote scripts" installation instructions don't seem to work. Maybe I did something wrong? Instead, unzip the release into Ableton's scripts in its system directory. Eg. `C:\ProgramData\Ableton\Live 11 Suite\Resources\MIDI Remote Scripts\Killamix_Mini` on Windows.
 
 ## Device Configuration
 
